@@ -1,0 +1,86 @@
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.music-wall-section { padding: 120px 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; }
+.music-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px; max-width: 1000px; margin: 0 auto;
+}
+.song-vinyl {
+  display: flex; flex-direction: column;
+  align-items: center; cursor: pointer;
+}
+.vinyl-record {
+  width: 140px; height: 140px; border-radius: 50%;
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+}
+.song-vinyl:hover .vinyl-record { animation: spinVinyl 3s linear infinite; }
+.vinyl-grooves {
+  position: absolute; inset: 12px; border-radius: 50%;
+  background: repeating-radial-gradient(circle,
+    transparent 0, transparent 3px,
+    rgba(255, 255, 255, 0.05) 3px, rgba(255, 255, 255, 0.05) 4px);
+}
+.vinyl-center {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px; position: relative; z-index: 2;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.song-info { margin-top: 18px; text-align: center; }
+.song-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 500;
+  color: #fff; margin-bottom: 4px;
+}
+.song-artist { font-size: 13px; color: rgba(253, 226, 237, 0.6); }
+.song-modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200; padding: 20px;
+}
+.song-modal {
+  background: linear-gradient(135deg, rgba(30, 15, 50, 0.95), rgba(50, 15, 40, 0.95));
+  border: 2px solid; border-radius: 28px;
+  padding: 50px 40px 40px; max-width: 480px;
+  width: 100%; text-align: center; position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+.modal-vinyl {
+  width: 180px; height: 180px;
+  margin: 0 auto 24px; border-radius: 50%;
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+}
+.modal-vinyl.spinning { animation: spinVinyl 5s linear infinite; }
+.modal-song-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 500;
+  color: #fff; margin-bottom: 6px;
+}
+.modal-song-artist {
+  font-size: 14px; color: rgba(253, 226, 237, 0.6);
+  margin-bottom: 24px; letter-spacing: 0.05em;
+}
+.modal-lyric {
+  font-size: 20px; font-style: italic;
+  color: #f472b6; line-height: 1.8;
+  margin: 24px 0; padding: 20px;
+  border-top: 1px solid rgba(236, 72, 153, 0.3);
+  border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+  font-family: 'Cormorant Garamond', serif;
+}
+.modal-memory {
+  font-size: 15px; color: rgba(253, 226, 237, 0.85);
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; margin-top: 20px; font-weight: 300;
+}
+.modal-memory span { color: #ec4899; animation: pulseSoft 1.5s ease-in-out infinite; }

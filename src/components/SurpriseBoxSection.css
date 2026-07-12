@@ -1,0 +1,124 @@
+.surprise-section { padding: 120px 40px; max-width: 900px; margin: 0 auto; position: relative; z-index: 5; }
+.box-stage {
+  min-height: 400px;
+  display: flex; align-items: center; justify-content: center;
+}
+.gift-box-wrapper {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 30px;
+}
+.gift-box {
+  position: relative; width: 200px; height: 200px;
+  background: transparent; border: none;
+  cursor: pointer; padding: 0;
+}
+.box-lid {
+  position: absolute; top: 30px; left: 0; right: 0;
+  height: 50px;
+  background: linear-gradient(135deg, #ec4899, #be185d);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4),
+              inset 0 -8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+.box-bow {
+  position: absolute; top: -35px; left: 50%;
+  transform: translateX(-50%); width: 80px; height: 50px;
+}
+.bow-left, .bow-right {
+  position: absolute; top: 0; width: 35px; height: 35px;
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.bow-left { left: 0; transform: rotate(-20deg); }
+.bow-right { right: 0; transform: rotate(20deg); }
+.bow-center {
+  position: absolute; bottom: 5px; left: 50%;
+  transform: translateX(-50%); width: 20px; height: 20px;
+  background: linear-gradient(135deg, #be185d, #831843);
+  border-radius: 4px; z-index: 2;
+}
+.box-body {
+  position: absolute; top: 80px;
+  left: 10px; right: 10px; bottom: 10px;
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4),
+              inset 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.box-ribbon-vertical {
+  position: absolute; top: 0; bottom: 0;
+  left: 50%; transform: translateX(-50%); width: 20px;
+  background: linear-gradient(180deg, #f472b6, #ec4899);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.box-ribbon-horizontal {
+  position: absolute; left: 0; right: 0;
+  top: 50%; transform: translateY(-50%); height: 20px;
+  background: linear-gradient(90deg, #f472b6, #ec4899);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.box-question {
+  position: relative; z-index: 2;
+  font-size: 60px; font-weight: 700; color: white;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Cormorant Garamond', serif;
+}
+.box-shadow {
+  position: absolute; bottom: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 80%; height: 20px;
+  background: radial-gradient(ellipse, rgba(236, 72, 153, 0.4), transparent 70%);
+  filter: blur(10px);
+}
+.box-hint {
+  font-size: 16px; color: rgba(253, 226, 237, 0.8);
+  letter-spacing: 0.05em; text-align: center;
+}
+.surprise-result { perspective: 1000px; }
+.surprise-card {
+  background: linear-gradient(135deg, rgba(50, 25, 70, 0.95), rgba(70, 25, 60, 0.95));
+  border: 2px solid rgba(236, 72, 153, 0.5);
+  border-radius: 28px; padding: 60px 50px;
+  text-align: center; position: relative;
+  max-width: 500px;
+  box-shadow: 0 30px 80px rgba(236, 72, 153, 0.3);
+}
+.card-corner {
+  position: absolute; color: #fbbf24; font-size: 20px;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+.card-corner.top-right { top: 16px; right: 16px; }
+.card-corner.top-left { top: 16px; left: 16px; animation-delay: 0.4s; }
+.card-corner.bottom-right { bottom: 16px; right: 16px; animation-delay: 0.8s; }
+.card-corner.bottom-left { bottom: 16px; left: 16px; animation-delay: 1.2s; }
+.surprise-icon {
+  font-size: 60px; margin-bottom: 24px;
+  display: inline-block;
+  animation: pulseSoft 1.5s ease-in-out infinite;
+}
+.surprise-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.6; color: #fff;
+  margin-bottom: 36px; font-weight: 500;
+  background: linear-gradient(90deg, #fff, #f472b6, #fff);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.another-btn {
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  border: none; color: white;
+  padding: 14px 32px; border-radius: 999px;
+  font-size: 15px; font-family: 'Tajawal', sans-serif;
+  font-weight: 500; cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.4);
+}
+.another-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.6);
+}

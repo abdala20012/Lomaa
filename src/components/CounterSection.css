@@ -1,0 +1,43 @@
+.counter-section { padding: 120px 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; }
+.counter-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px; max-width: 900px; margin: 0 auto;
+}
+.counter-block {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px; padding: 40px 20px;
+  text-align: center; position: relative;
+  overflow: hidden; transition: all 0.3s;
+}
+.counter-block:hover {
+  border-color: rgba(236, 72, 153, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15);
+}
+.counter-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: linear-gradient(90deg, transparent, #ec4899, transparent);
+}
+.counter-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 8vw, 80px); font-weight: 500; line-height: 1;
+  background: linear-gradient(180deg, #fff, #f472b6);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+  margin-bottom: 8px;
+}
+.counter-label {
+  font-size: 14px; color: rgba(253, 226, 237, 0.6);
+  text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500;
+}
+.counter-footnote {
+  text-align: center; margin-top: 50px;
+  color: rgba(253, 226, 237, 0.7);
+  font-size: 16px; display: flex;
+  align-items: center; justify-content: center;
+  gap: 12px; font-style: italic;
+}
+.counter-footnote span { color: #ec4899; font-style: normal; animation: pulseSoft 2s ease-in-out infinite; }

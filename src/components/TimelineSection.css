@@ -1,0 +1,65 @@
+.timeline-section { padding: 120px 40px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 5; }
+.timeline { position: relative; padding: 40px 0; }
+.timeline-line {
+  position: absolute; right: 50%; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #ec4899 10%, #a855f7 50%, #ec4899 90%, transparent);
+  transform: translateX(50%);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+.timeline-item {
+  position: relative; width: 50%;
+  padding: 30px 50px; display: flex; align-items: center;
+}
+.timeline-item.right { right: 0; justify-content: flex-start; }
+.timeline-item.left { right: 50%; justify-content: flex-end; }
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px; padding: 24px 28px;
+  width: 100%; max-width: 400px; transition: all 0.3s;
+}
+.timeline-content:hover {
+  border-color: rgba(236, 72, 153, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+}
+.timeline-date {
+  display: inline-block; font-size: 12px;
+  color: #f472b6; letter-spacing: 0.15em;
+  background: rgba(236, 72, 153, 0.15);
+  padding: 4px 12px; border-radius: 999px;
+  margin-bottom: 12px; font-weight: 500;
+}
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 500;
+  color: #fff; margin-bottom: 10px;
+}
+.timeline-desc {
+  font-size: 15px; line-height: 1.8;
+  color: rgba(253, 226, 237, 0.8);
+}
+.timeline-dot {
+  position: absolute; right: 50%; top: 50%;
+  transform: translate(50%, -50%);
+  width: 50px; height: 50px; border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  border: 3px solid #0a0a14;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 20px; cursor: pointer; z-index: 2;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+}
+@media (max-width: 768px) {
+  .timeline-line { right: 30px; transform: none; }
+  .timeline-item, .timeline-item.right, .timeline-item.left {
+    width: 100%; right: 0; padding: 20px 20px 20px 80px;
+    justify-content: flex-start;
+  }
+  .timeline-dot {
+    right: 30px; transform: translate(50%, -50%);
+    width: 40px; height: 40px; font-size: 16px;
+  }
+  .timeline-content { max-width: 100%; }
+}
